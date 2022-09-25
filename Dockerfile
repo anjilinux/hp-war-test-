@@ -15,7 +15,7 @@
 #     default-jre \                  
 #     nginx
 
-FROM alpine
+FROM ubuntu
 # FROM httpd
 
 # FROM redis:latest
