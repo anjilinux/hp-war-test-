@@ -1,10 +1,10 @@
-# FROM ubuntu 
+FROM ubuntu 
 
-# RUN apt-get update -y && apt-get install -y \
-#     unzip \
-#     wget \
-#     default-jre \                  
-#     nginx
+RUN apt-get update -y && apt-get install -y \
+    unzip \
+    wget \
+    default-jre \                  
+    nginx
 
 
 # FROM ubuntu:latest
@@ -15,7 +15,7 @@
 #     default-jre \                  
 #     nginx
 
-FROM ubuntu
+#FROM ubuntu
 # FROM httpd
 
 # FROM redis:latest
