@@ -1,0 +1,23 @@
+version: 0.2 
+
+phases:
+   install:
+      runtime-version:
+        nodejs: 12
+pre_build:
+   commands:
+      - echo Installing dependencies
+      - npm install 
+build: 
+    commands:
+      - echo Running tests 
+      - npm test
+      - echo Building and tagging Docker image
+      - aws ecr get-login-password --region us-east-1 docker ecr crete repo comands
+      - docker build -t node-api .
+      - docker tag node-api:latest 15521251452.dkr.ecr.us-est1-1:latest
+
+post_build:
+  commands:
+     - echo Pushing ti ECR
+     - docker push  node-api:latest 15521251452.dkr.ecr.us-est1-1:latest
