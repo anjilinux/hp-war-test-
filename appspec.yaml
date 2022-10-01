@@ -1,0 +1,17 @@
+#appspec.yaml
+---
+artifacts:
+  files:
+      - ROOT.war
+discard-paths: true
+phases:
+  install:  
+    runtime-versions:
+       java: corretto8
+    commands:
+     - "apt-get install git -y"
+     -  "chmod 777 build.sh"
+     -   "sh build.sh"
+version: 0.2
+
+
